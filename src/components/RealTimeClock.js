@@ -28,16 +28,7 @@ const RealTimeClock = () => {
   }, []);
 
   return (
-    <div
-      style={{
-        writingMode: "vertical-lr",
-        textOrientation: "mixed",
-        whiteSpace: "nowrap",
-        position: "absolute",
-        bottom: "20px",
-        left: "10px",
-      }}
-    >
+    <div className="timeStyle">
       <p className="greenFontStyle">{timestamp}</p>
     </div>
   );

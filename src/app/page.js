@@ -33,12 +33,12 @@ export default function Home() {
     <main>
       <section className="section1">
         <div className="speBlock">
-          <RealTimeClock />
           <div className="speFont">
             <p className="greenFontStyle" style={{ fontSize: "30px" }}>
               &lt; SPE / FRONTEND &gt;
             </p>
           </div>
+          <RealTimeClock />
         </div>
       </section>
       <section className="section2">
@@ -65,7 +65,10 @@ export default function Home() {
               let subTotal = item.product.price * item.quantity;
               total = total + subTotal;
               return (
-                <div className="blockBodyListAllProductsInvoices">
+                <div
+                  key={item.product.code}
+                  className="blockBodyListAllProductsInvoices"
+                >
                   <span
                     className="blockProductDetails"
                     style={{ width: "60%", textAlign: "left" }}
