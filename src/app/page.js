@@ -18,11 +18,22 @@ export default function Home() {
       .then((response) => response.json())
       .then((data) => {
         setDataOrderDetails(data);
-        console.log(data);
       })
       .catch((error) => {
         console.error("Error:", error);
       });
+  };
+
+  const handleCangeInput = (code) => (e) => {
+    const arr = [...dataOrderDetails];
+
+    arr.forEach((obj) => {
+      if (obj.product.code === code) {
+        obj.quantity = e.target.value;
+      }
+    });
+
+    setDataOrderDetails(arr);
   };
 
   useEffect(() => {
@@ -89,7 +100,12 @@ export default function Home() {
                     </div>
                   </span>
                   <span className="blockQuantity" style={{ width: "20%" }}>
-                    {item.quantity}
+                    <input
+                      type="number"
+                      min={0}
+                      onChange={handleCangeInput(item.product.code)}
+                      value={item.quantity}
+                    />
                   </span>
                   <span className="blockSubTotal" style={{ width: "20%" }}>
                     <CurrencyFormat price={subTotal} currency="IDR" />

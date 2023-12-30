@@ -100,6 +100,17 @@ a {
   text-decoration: none;
 }
 
+input {
+  width: auto;
+  padding: 6px 6px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
